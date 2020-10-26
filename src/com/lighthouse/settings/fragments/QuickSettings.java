@@ -24,6 +24,10 @@ import android.view.View;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
+
+@SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
@@ -50,4 +54,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.SUPPLIES;
     }
 
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.lighthouse_settings_quicksettings);
 }

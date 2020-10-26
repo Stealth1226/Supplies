@@ -37,6 +37,10 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
+
+@SearchIndexable
 public class NavbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     @Override
@@ -56,4 +60,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.SUPPLIES;
     }
+
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.lighthouse_settings_navigation);
 }
