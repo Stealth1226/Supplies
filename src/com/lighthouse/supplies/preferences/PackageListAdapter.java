@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lighthouse.settings.preferences;
+package com.lighthouse.supplies.preferences;
 
 import android.content.Context;
 import android.content.Intent;

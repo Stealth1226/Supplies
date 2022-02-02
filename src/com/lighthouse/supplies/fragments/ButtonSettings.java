@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2015 The OmniROM Project
+ *  Copyright (C) 2016 The Dirty Unicorns Project
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,45 +15,38 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package com.lighthouse.settings.fragments;
+
+package com.lighthouse.supplies.fragments;
+
+import android.content.ContentResolver;
+import android.content.res.Resources;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.UserHandle;
+import android.os.Vibrator;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
+import android.provider.Settings;
+
+import com.android.settings.R;
+
+import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.ContentResolver;
-import android.app.WallpaperManager;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.hardware.fingerprint.FingerprintManager;
-import android.net.Uri;
-import android.os.Bundle;
-import androidx.preference.SwitchPreference;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-
-import android.provider.Settings;
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.search.SearchIndexable;
-
-@SearchIndexable
-public class LockScreenSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class ButtonSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener{
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.lighthouse_settings_lockscreen);
+        addPreferencesFromResource(R.xml.lighthouse_settings_button);
 
-        ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources resources = getResources();
-
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -67,6 +60,4 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.SUPPLIES;
     }
 
-    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.lighthouse_settings_lockscreen);
 }

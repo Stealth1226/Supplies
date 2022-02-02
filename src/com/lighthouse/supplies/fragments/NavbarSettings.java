@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lighthouse.settings.fragments;
+package com.lighthouse.supplies.fragments;
 
 import java.util.ArrayList;
 

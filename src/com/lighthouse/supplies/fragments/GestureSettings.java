@@ -1,4 +1,4 @@
-package com.lighthouse.settings.fragments;
+package com.lighthouse.supplies.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
 

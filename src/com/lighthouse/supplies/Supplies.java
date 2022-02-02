@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.lighthouse.settings;
+package com.lighthouse.supplies;
 
 import com.android.internal.logging.nano.MetricsProto;
 

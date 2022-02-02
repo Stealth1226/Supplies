@@ -18,9 +18,33 @@
         android:title="@string/button_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceScreen
-        android:key="volume_key"
-        android:fragment="com.lighthouse.settings.fragments.VolumeRockerSettings"
-        android:title="@string/volume_title" />
+   <PreferenceCategory
+        android:key="power_menu"
+        android:title="@string/power_menu_title">
 
+    <Preference
+        android:key="power_menu"
+        android:title="@string/power_menu_title"
+        android:summary="@string/power_menu_title_summary"
+        android:fragment="com.lighthouse.supplies.fragments.PowerMenuSettings" />
+    
+   <ListPreference
+        android:key="torch_power_button_gesture"
+        android:title="@string/torch_power_button_gesture_title"
+        android:entries="@array/torch_power_button_gesture_entries"
+        android:entryValues="@array/torch_power_button_gesture_values" />
+
+    </PreferenceCategory>
+
+   <PreferenceCategory
+        android:key="volume_category"
+        android:title="@string/volume_category">
+
+    <com.lighthouse.supplies.preferences.SystemSettingSwitchPreference
+	android:key="volume_button_music_control"
+        android:summary="@string/volume_rocker_music_controls_summary"
+        android:title="@string/volume_rocker_music_controls_title"
+        android:defaultValue="false" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
